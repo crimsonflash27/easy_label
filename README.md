@@ -37,6 +37,13 @@ The main reason for the creation of this tool is to ease the process of creating
 
 6. To assign class label to object, after selection, click the *Confirm Selection* button and this will open a dialog box, where you will give an integer value to be assigned to the object.
 
-7. To save the created mask, the *Save Mask* button will be clicked and the mask will be saved accordingly in png format. 
+7. To save the created mask, the *Save Mask* button will be clicked and the mask will be saved accordingly in png format.
+
+
+**DISCLAIMERS:**
+
+1. The mask will be saved as mask.png in the same folder as main.py
+
+2. *Zoom in* and *Zoom out* to be used before objects are selected
 
 
