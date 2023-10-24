@@ -3,6 +3,7 @@ from tkinter import *
 from tkinter import filedialog
 from PIL import Image, ImageTk,ImageDraw
 import numpy as np
+import PIL
 
 ##2 main windows: Image window (Image_win)
 
@@ -16,6 +17,7 @@ class Image_win:
           
           #Setting up canvas and numpy array
           self.width,self.height=self.img.size
+          self.original = (self.width,self.height)
           self.canvas = tk.Canvas(self.root,width=self.width,height=self.height,bg='white')
           
           #self.canvas = tk.Canvas(self.root)
@@ -151,7 +153,7 @@ class Image_win:
       
       def save(self):
       
-          
+          self.array = self.array.resize(self.original,resample = PIL.Image.NEAREST)
           self.array.save("mask.png")
           ##Close my window?###
           self.root.destroy()
@@ -186,9 +188,11 @@ class Image_win:
           self.root.wait_window(lab_win)
           
       def zoom_in(self):
+          
           self.width = round(self.width*1.2)
           self.height = round(self.height*1.2)
           new_image = self.img.resize((self.width,self.height))
+          self.array = self.array.resize((self.width,self.height),resample=PIL.Image.NEAREST)
           new_photo = ImageTk.PhotoImage(new_image)
           self.canvas.itemconfig(self.image_window,image=new_photo)
           self.canvas.image = new_photo
@@ -198,6 +202,7 @@ class Image_win:
           self.width = round(self.width*0.8)
           self.height = round(self.height*0.8)
           new_image = self.img.resize((self.width,self.height))
+          self.array = self.array.resize((self.width,self.height),resample=PIL.Image.NEAREST)
           new_photo = ImageTk.PhotoImage(new_image)
           self.canvas.itemconfig(self.image_window,image=new_photo)
           self.canvas.image = new_photo
