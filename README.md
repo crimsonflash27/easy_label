@@ -5,9 +5,9 @@ The main reason for the creation of this tool is to ease the process of creating
 
 **Required python packages:** 
 
-1. tkinter
-2. PIL
-3. numpy
+1. tkinter -- My version is 8.6
+2. PIL -- My version is 9.5.0
+3. numpy -- My version is 1.25.0
 
 **Procedure:**
 
