@@ -136,7 +136,9 @@ class Image_win:
           #########################################'
           #Setting Co-ordinates back to an empty list
              self.coordinate_list = []
-          
+          #Sets the polygon back
+             self.polygon = 0
+         
              #Reactivating selection button
              self.select_button.config(state=tk.ACTIVE)
              print("Confirmed Selection")
@@ -144,7 +146,11 @@ class Image_win:
       #Function for Redo button
       def redo_selection(self):
           
-          self.canvas.delete(self.polygon)
+          if self.polygon != 0:
+             self.canvas.delete(self.polygon)
+          else:
+             for i in self.temp_lines:
+                 self.canvas.delete(i)
           self.coordinate_list = []
           #Reactivating Selection button
           self.select_button.config(state=tk.ACTIVE)
