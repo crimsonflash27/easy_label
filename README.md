@@ -44,6 +44,8 @@ The main reason for the creation of this tool is to ease the process of creating
 
 1. The mask will be saved as mask.png in the same folder as main.py
 
-2. *Zoom in* and *Zoom out* to be used before objects are selected
+2. *Zoom in* and *Zoom out* to be used before objects are selected to avpid mask mismatch, as co-ordiantes are used to assign the labels.
+
+3. Areas not covered in the image will be assigned the 0 class. 
 
 
